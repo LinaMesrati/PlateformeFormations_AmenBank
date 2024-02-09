@@ -1,0 +1,59 @@
+<app-header></app-header>
+
+<div class="box">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>{{data.title}}</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-5 col-sm-12">
+      <img src="{{data.image}}" alt="sas"> 
+    </div>
+    <div class="col-md-7 col-sm-12">
+      <h3>Sessions:</h3>
+      <li *ngFor="let session of data.sessions" class="list-group-item session-item" [class.selected]="session.selected" >
+        <div class="session-details" >
+          <div class="date">Date de début {{ session.date }}</div>
+          <div class="info">
+            <ul>
+              <li class="detail">
+                <strong>Durée:</strong> {{ session.duration }} minutes
+              </li>
+              <li class="detail">
+                <strong>Lieu:</strong> {{ session.location }}
+              </li>
+            </ul>
+          </div>
+          <div class="register-button">
+            <button class="btn btn-primary register-btn" (click)="addToCart(data,session)"  [disabled]="formations.length>=15">select</button>
+             <div>{{formations.length}}/15 candidats</div>
+            <div class="text text-bg-danger w-50" *ngIf="formations.length >= 15">Toutes les places sont prises</div>
+          </div>
+        </div>
+      </li>
+    </div>
+    <div class="right d-flex justify-content-end">
+    <div class="cl"><strong>Niveau: </strong>{{data.niveau}}</div>
+  </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="info1">
+        <ul class="list-unstyled">
+          <li>
+            <h2 class="planning-title">Planning :</h2>
+            <div id="planning-content" class="des">
+              <p class="description-text">{{ data.description }}</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="right d-flex justify-content-end">
+        <button class="btn btn-success mt-3" (click)="savePlanningAsPDF()">Enregistrer comme PDF</button>
+      </div>
+      
+    </div>
+  </div>
+</div>

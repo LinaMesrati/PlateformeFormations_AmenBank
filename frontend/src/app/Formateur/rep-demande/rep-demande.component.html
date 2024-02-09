@@ -1,0 +1,41 @@
+<app-header></app-header>
+<div class="container m-5 center">
+<table class="table">
+    <tr>
+        <td style="background-color: orange; width:50px"></td> <td>En cours</td>
+        <td style="background-color: red;width:50px"></td><td>Refusé</td>
+        <td style="background-color: green;width:50px"></td><td>Accepté</td>
+    </tr>
+</table>
+</div>
+<div *ngIf="demandes && demandes.length > 0; else noDemandes">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+
+          <th>Fomration</th>
+          <th>Start Date</th>
+          <th>Duration</th>
+          <th>Category</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let demande of demandes" >
+          <td [class]="getRowStyle(demande)">{{ demande.formationName}}</td>
+          <td [class]="getRowStyle(demande)">{{ demande.startDate | date:'shortDate' }}</td>
+          <td [class]="getRowStyle(demande)">{{ demande.duration}}</td>
+          <td [class]="getRowStyle(demande)">{{ demande.category }}</td>
+          <td [class]="getRowStyle(demande)">{{ demande.description }}</td>
+          <td [class]="getRowStyle(demande)">
+            <button class="btn btn-danger" (click)="annuler(demande)">Annuler</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <ng-template #noDemandes>
+    <p class="text-center">No Demandes .</p>
+  </ng-template>
+  

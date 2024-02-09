@@ -1,0 +1,48 @@
+<app-header></app-header>
+<div class="cartBox">
+    <h1 class="text-danger">Votre liste d'envies</h1>
+    <div class="headCart">
+        <p class="lead">Vous avez <label class="text-danger">{{cartForms.length}}</label> formation(s) sélectionnée(s)</p>
+        <span class="text-danger card-header" (click)="clearCart()">
+            <img src="https://cdn-icons-png.flaticon.com/512/6861/6861362.png" alt="" width="30" height="30"> Vider la liste
+        </span>
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Formation</th>
+                <th>Catégorie</th>
+                <th>Niveau</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of cartForms; let index = index">
+                <td><img src="{{item.image}}" alt=""></td>
+                <td>
+                    <div>
+                        <strong>{{item.title}}</strong>
+                    </div>
+                </td>
+                <td>{{item.categ}}</td>
+                <td>{{item.niveau}}</td>
+                <td>
+                    <button class="btn btn-danger" (click)="deleteForm(index)">Supprimer</button>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr class="text-center">
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th class="align-middle">
+                    <button class="btn btn-success" (click)="addCart()">Inscrire maintenant</button>
+                </th>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+<div class="alert alert-success" role="alert" *ngIf="success"><strong>Bravo!</strong> Votre inscription a été effectuée avec succès</div>

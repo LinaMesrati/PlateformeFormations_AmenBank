@@ -1,0 +1,29 @@
+<div class="box">
+    <div class="row">
+      <div class="col-md-5 col-sm-12">
+        <img src="{{data.image}}" alt="sas">
+      </div>
+      <div class="col-md-7 col-sm-12">
+        <div class="info">
+          <ul class="list-unstyled">
+            <li><strong>Title : </strong>{{data.title}}</li>
+            <li><strong>Category : </strong>{{data.categ}}</li>
+            <li><strong>Description : </strong>{{data.description}}</li>
+            <li><strong>Price : </strong>{{data.price}} Dinars</li>
+          </ul>
+        </div>
+        <h3>Sessions:</h3>
+        <ul>
+          <li *ngFor="let session of data.sessions">
+            <strong>Date:</strong> {{ session.date }}, 
+            <ul>
+            <li><strong>Duration:</strong> {{ session.duration }} minutes</li>
+            <li><strong>Location:</strong> {{ session.location }}</li>
+            <li></li>
+           </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  

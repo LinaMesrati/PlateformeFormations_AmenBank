@@ -1,0 +1,31 @@
+<app-header></app-header>
+<div class="box mt-2 ">
+ 
+      <div class="row">
+        <div class="col-md-8">
+            <div class="w-25">
+                <app-select [data]="Categories" [title]="''" (selectedValue)="filterCategories($event)"></app-select>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="container mt-3">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Rechercher..." (input)="searchByTitle()" [(ngModel)]="searchTitle">
+                </div>
+            </div>
+        </div>
+      
+       
+    </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 col-sm-12" *ngFor="let item of formations | paginate: { itemsPerPage: 4, currentPage: p }" >
+          <app-formation [item]="item"  ></app-formation>
+        </div>
+      </div>
+      <div class="text-center">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      </div>
+      
+
+

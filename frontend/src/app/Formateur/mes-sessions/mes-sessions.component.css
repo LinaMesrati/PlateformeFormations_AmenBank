@@ -1,0 +1,41 @@
+/* Ajoutez ici vos styles personnalisés */
+
+/* Exemple de style pour le tableau */
+table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+    border-collapse: collapse;
+  }
+  
+  thead {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  th, td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+  }
+  
+  /* Exemple de style pour les boutons */
+  .btn {
+    margin-right: 5px;
+  }
+  
+  /* Exemple de style pour l'image */
+  .img-thumbnail {
+    max-width: 100px;
+    height: auto;
+  }
+  
+  /* Exemple de style pour le message "No formations available." */
+  .text-center {
+    text-align: center;
+  }
+  
+  h3{
+    text-align: center;
+    font-weight: bold;
+  }

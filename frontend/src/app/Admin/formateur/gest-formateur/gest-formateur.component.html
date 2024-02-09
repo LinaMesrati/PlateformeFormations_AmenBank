@@ -1,0 +1,46 @@
+<app-header></app-header>
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <select id="categoryFilter" class="form-select" [(ngModel)]="selectedCategory" (change)="filterFormateurs()">
+        <option value="all">Choisir le type</option>
+        <option value="all">Tous</option>
+        <option value="admin">Responsable</option>
+        <option value="formateur">Formateur</option>
+      </select>
+    </div>
+  </div>
+
+  <table class="table table-striped mt-3">
+    <thead class="table-dark">
+      <tr class="text-center">
+        <th scope="col">Nom</th>
+        <th scope="col">Email</th>
+        <th scope="col">Téléphone</th>
+        <th scope="col">Type</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of formateurs | paginate: { itemsPerPage: 3, currentPage: p }" [ngClass]="{'admin-row': item.type === 'admin', 'formateur-row': item.type === 'formateur'}">
+        <td>{{item.fullname}}</td>
+        <td>{{item.email}}</td>
+        <td>{{item.mobile}}</td>
+        <td>{{item.type === 'admin' ? 'Responsable' : 'Formateur'}}</td>
+
+        <td class="text-center">
+          <button class="btn btn-primary me-2" (click)="formateur(item.id)">Formateur</button>
+          <button class="btn btn-warning" (click)="responsable(item.id)">Responsable</button>
+          <button class="btn btn-danger mx-5" (click)="delete(item)">Supprimer</button>
+        </td>
+     
+
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="text-center">
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
+

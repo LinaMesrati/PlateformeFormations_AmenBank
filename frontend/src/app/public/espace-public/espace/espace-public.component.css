@@ -1,0 +1,264 @@
+/* Reset some default styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set a background color and font color for the body */
+body {
+    background-color: #f8f9fa; /* Light gray background color */
+    color: #343a40; /* Dark text color */
+    font-family: 'Arial', sans-serif; /* Choose your preferred font-family */
+}
+
+/* Style the navbar */
+.navbar {
+    background-color: #343a40; /* Dark background color for the navbar */
+}
+
+.navbar-brand,
+.navbar-nav .nav-link {
+    color: #ffffff !important; /* White text color for the navbar links */
+    font-size: larger;
+}
+
+/* Style the header */
+header {
+    background-color: #343a40; /* Dark background color for the header */
+    color: #ffffff; /* White text color for the header */
+    text-align: center;
+    padding: 4rem 0;
+}
+#planning-content {
+  background-color: #7ce57342; /* Rouge */
+border: 1px solid #BDBDBD; /* Gris */
+border-radius: 8px;
+padding: 20px;
+font-family: 'Times New Roman', Times, serif;
+white-space: pre-wrap; /* Pour conserver les sauts de ligne */
+line-height: 1.6;
+font-size: 25px;
+}
+.custom-btn {
+  font-size: 16px; /* Ajustez la taille de la police selon vos préférences */
+  font-weight: bold; /* Optionnel : rend le texte en gras */
+  background-color: #0e0800; /* Couleur de fond orange, vous pouvez la changer */
+  color: #ffffff; /* Couleur du texte blanc, vous pouvez la changer */
+  border: 1px solid #eea236; /* Bordure orange, vous pouvez la changer */
+  transition: background-color 0.3s; /* Ajoute une transition de couleur au survol */
+}
+
+.custom-btn:hover {
+  background-color: #f0ad4e; 
+  color: white;/* Couleur de fond orange différente au survol */
+}
+.larger-font {
+  font-size: 18px; /* ou toute autre taille souhaitée */
+}
+
+/* Style the buttons in the header */
+.btn-primary {
+    background-color: #007bff; /* Primary color for the buttons */
+    border-color: #007bff; /* Border color for the buttons */
+}
+
+.btn-outline-light {
+    color: #ffffff; /* White text color for the outline button */
+    border-color: #ffffff; /* Border color for the outline button */
+}
+
+/* Style the sections */
+section {
+    padding: 5rem 0;
+}
+
+/* Style the form inputs */
+.form-control {
+    margin-bottom: 1rem; /* Add some space between form inputs */
+}
+
+/* Style the footer */
+footer {
+    background-color: #343a40; /* Dark background color for the footer */
+    color: #ffffff; /* White text color for the footer */
+    padding: 2rem 0;
+}
+
+/* Add some styles for the container */
+.container {
+    max-width: 2000px; /* Set a maximum width for the container */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Style the submit button */
+#submitButton {
+    background-color: #007bff; /* Primary color for the submit button */
+    border-color: #007bff; /* Border color for the submit button */
+}
+
+/* Style the submit success and error messages */
+#submitSuccessMessage,
+#submitErrorMessage {
+    margin-top: 1rem; /* Add some space above the messages */
+}
+
+/* Style the features section */
+.feature {
+    font-size: 2rem; /* Increase the font size of the feature icons */
+    margin-bottom: 1rem; /* Add some space below the feature icons */
+}
+/* Style the Candidate Space section */
+#candidate-space {
+    background-color: #ffffff; /* White background color for the section */
+    color: #343a40; /* Dark text color for the content */
+    text-align: center; /* Center align the content */
+}
+
+/* Style the Trainer Space section */
+#trainer-space {
+    background-color: #f8f9fa; /* Light gray background color for the section */
+    color: #343a40; /* Dark text color for the content */
+    text-align: center; /* Center align the content */
+}
+
+/* Style the Private Space section */
+#private-space {
+    background-color: #ffffff; /* White background color for the section */
+    color: #343a40; /* Dark text color for the content */
+    text-align: center; /* Center align the content */
+}
+
+/* Add some padding to the section content */
+.container.px-5.my-5 {
+    padding: 2rem;
+}
+
+/* Add a border to the bottom of each section */
+section.border-bottom {
+    border-bottom: 1px solid #dee2e6; /* Light gray border color */
+}
+.equal-sized-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10%;
+}
+.item {
+    width: 100%;
+    text-decoration: none;
+    color: #333;
+    margin: 15px;
+    display: inline-block;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(202, 37, 16, 0.3);
+    transition: all 0.3s ease-in-out;
+    img {
+      width: 100%;
+      height: 200px;
+      border-radius: 10px;
+    }
+    .body {
+      padding-top: 0;
+    }
+    p {
+      margin: 15px 0;
+      height: 100px;
+      overflow: hidden;
+      font-size: 16px;
+      padding: 5px 15px;
+    }
+    h4 {
+      height: 75px;
+      overflow: hidden;
+      padding: 5px 15px;
+      font-size: 18px;
+      background-color: #eee;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+    &:hover {
+      transform: scale(1.1);
+    }
+    span {
+      background-color: #f1b4b4;
+      padding: 3px 7px;
+      border-radius: 30px;
+    }
+  }
+  .modal-body {
+    font-family: 'Arial', sans-serif;
+   
+  }
+  
+  .session-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .session-item {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .session-item:hover {
+    box-shadow: 0px 12px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .session-details {
+    flex: 1;
+  }
+  
+  .register-button {
+    text-align: right;
+  }
+  
+  .register-btn {
+    margin-top: 20%;
+    background-color: #51168894;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .register-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .no-sessions {
+    color: #888;
+    text-align: center;
+  }
+  .date {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2b0041; /* or any color you prefer */
+   
+  }
+  .detail
+  {
+    margin-left: 20px;
+  }
+  .niveau
+  {
+    width:40%;
+    margin-left: 10%;
+    
+  }
+  .title
+  {
+    color: #0491a0;
+    font-size :2em;;
+  }
+  
+  .c{
+    margin-left: 40%;
+  }

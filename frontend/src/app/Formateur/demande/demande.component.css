@@ -1,0 +1,42 @@
+/* styles.css */
+body {
+    padding: 20px;
+    font-family: 'Helvetica Neue', sans-serif;
+  }
+  
+  form {
+    max-width: 600px;
+    margin: auto;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    text-align: center;
+    color: #007bff;
+  }
+  
+  label {
+    margin-top: 10px;
+    color: #495057;
+  }
+  
+  textarea {
+    resize: vertical;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .btn-primary {
+    background-color: #075a69;
+    border: none;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  

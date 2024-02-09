@@ -1,0 +1,14 @@
+<div class="item">
+  <div routerLink="/details/{{item.id}}">
+    <img src="{{item.image}}" alt="" srcset="" />
+    <div class="body">
+      <h4>{{item.title}}</h4>
+      <p>{{item.description}}</p>
+    </div>
+  </div>
+   
+    <div class="px-3 mb-2 d-flex justify-content-between align-items-center">
+      <button class="btn btn-success" (click)="add()">Add to cart</button>
+      <span>{{item.price}} Dinars</span>
+    </div>
+  </div>

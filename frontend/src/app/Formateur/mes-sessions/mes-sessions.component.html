@@ -1,0 +1,77 @@
+<app-header></app-header>
+<h3 class="mt-5">Explorez vos formations avec passion et expertise</h3>
+<div class="mt-5" *ngIf="formations && formations.length > 0; else noFormations">
+  <table class="table table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th></th>
+        <th>Titre</th>
+        <th>Description</th>
+        <th>Paiement</th>
+        <th>Catégorie</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let formation of formations">
+        <td>
+          <img *ngIf="formation.formation.image" [src]="formation.formation.image" alt="{{ formation.formation.title }}" class="img-thumbnail" />
+        </td>
+        <td>{{ formation.formation.title }}</td>
+        <td>{{ formation.formation.description | slice:0:50 }}</td>
+        <td>{{ formation.formation.price }}</td>
+        <td>{{ formation.formation.categ }}</td>
+        <td>
+          <button class="btn btn-danger" (click)="detail(content,formation.formation.id)" >Détails</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<ng-template #noFormations>
+  <p class="text-center">Aucune formations .</p>
+</ng-template>
+
+
+
+
+
+
+
+
+
+<ng-template #content let-c="close" let-d="dismiss"> 
+  <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title" style="color: rgb(39, 10, 66);">
+        <strong>Candidats</strong> 
+      </h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+
+<table class="table table-striped">
+  <thead>
+      <tr class="text-center">
+          <th></th>
+          <th>Candidat_Id</th>
+          <th>Nom</th>
+          <th>Email</th>
+          <th>Date</th>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let item of carts; let index = index" >
+          <td></td>
+          <td>{{item.userId}}</td>
+          <td>{{item.user[0].fullname}}</td>
+          <td>{{item.user[0].email}}</td>
+          <td>{{item.date | date:"longDate"}}</td>
+      </tr>
+  </tbody> 
+</table>
+ 
+</div>
+               
+</ng-template>

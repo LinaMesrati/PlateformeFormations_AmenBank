@@ -1,0 +1,25 @@
+/* Ajoutez ces styles pour gérer la disposition */
+.box {
+    width: 80%;
+    margin: 100px auto;
+    height: auto; /* Ajustez la hauteur en fonction du contenu */
+  
+    .row {
+      display: flex;
+      justify-content: space-between;
+    }
+  
+    img {
+      width: 100%;
+      max-height: 500px;
+      min-height: 500px;
+    }
+  
+    ul {
+      li {
+        font-size: 22px;
+        margin: 20px 0;
+      }
+    }
+  }
+  

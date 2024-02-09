@@ -1,0 +1,61 @@
+
+<div class="container mt-5 " *ngIf="!showForgotPasswordForm" >
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header text-center bg-primary text-white">
+          <h1>Se connecter</h1>
+          <h6>Veuillez entrer votre adresse e-mail et votre mot de passe</h6>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Adresse e-mail</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="email">
+              <div id="emailHelp" class="form-text">Nous ne partagerons jamais votre adresse e-mail avec personne.</div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Mot de passe</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password">
+            </div>
+            <button type="submit" class="btn btn-primary">Se connecter</button>
+          </form>
+          <div class="mt-3">
+            <a routerLink="/signup" class="text-decoration-none">Nouvel utilisateur ? Cliquez ici pour vous inscrire</a>
+          </div>
+          <div class="mt-3">
+            <a (click)="showForgotPasswordForm = true" class="text-decoration-none">Mot de passe oublié ? Cliquez ici</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-5" *ngIf="showForgotPasswordForm">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header text-center bg-primary text-white">
+          <h1>Réinitialiser le mot de passe</h1>
+          <h6>Veuillez entrer votre adresse e-mail</h6>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="forgotPasswordForm" (ngSubmit)="sendResetPasswordEmail()">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Adresse e-mail</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="email">
+              <div id="emailHelp" class="form-text">Nous ne partagerons jamais votre adresse e-mail avec personne.</div>
+            </div>
+            <button type="submit" class="btn btn-primary">Envoyer l'e-mail de réinitialisation</button>
+          </form>
+          <div class="mt-3">
+            <a (click)="showForgotPasswordForm = false" class="text-decoration-none">Retour à la connexion</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
